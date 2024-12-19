@@ -3,7 +3,21 @@ package com.company.builder;
 import java.time.LocalDate;
 
 public class Client {
-    public static void main(String[] args) {}
+    public static void main(String[] args) {
+        User user = createUser();
+        UserDtoBuilder builder = new UserWebDtoBuilder();
+
+        UserDto dto = directBuild(builder, user);
+        System.out.println(dto);
+    }
+    // Director
+    private static UserDto directBuild(UserDtoBuilder builder, User user) {
+        return builder.withFirstName(user.getFirstName())
+                .withLastName(user.getLastName())
+                .withBirthday(user.getBirthday())
+                .withAddress(user.getAddress())
+                .build();
+    }
 
     /**
      * Returns a sample user.
