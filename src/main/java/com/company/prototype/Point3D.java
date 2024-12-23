@@ -28,4 +28,9 @@ public class Point3D {
 	public Point3D add(Point3D vect) {
 		return new Point3D(x+vect.x, y+vect.y, z+vect.z);
 	}
+
+	@Override
+	public String toString() {
+		return "Point3D[x=" + x + ", y=" + y + ", z=" + z + "]";
+	}
 }
