@@ -7,7 +7,6 @@ package com.company.structural.adapter;
 public class Employee {
     private String fullName;
     private String jobTitle;
-    private String getFullName;
     private String officeLocation;
 
     public String getFullName() {
@@ -26,13 +25,6 @@ public class Employee {
         this.jobTitle = jobTitle;
     }
 
-    public String getGetFullName() {
-        return getFullName;
-    }
-
-    public void setGetFullName(String getFullName) {
-        this.getFullName = getFullName;
-    }
 
     public String getOfficeLocation() {
         return officeLocation;
