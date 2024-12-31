@@ -1,4 +1,16 @@
 package com.company.structural.decorator;
 
-public class HtmlEncodedMessage {
+import org.apache.commons.text.StringEscapeUtils;
+
+// Decorator. Implement component interface.
+public class HtmlEncodedMessage implements Message {
+    private Message msg;
+    public HtmlEncodedMessage(Message msg) {
+        this.msg = msg;
+    }
+
+    @Override
+    public String getContent() {
+        return StringEscapeUtils.escapeHtml4(msg.getContent());
+    }
 }
